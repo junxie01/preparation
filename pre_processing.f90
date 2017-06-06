@@ -37,6 +37,8 @@ if (iargc().ne.1)then
    call exit(-1)
 endif
 call getarg(1,inpar)
+inquire(file=inpar,exist=ext)
+if(.not.ext)stop "Hey dude, forget something?"
 ! read the control parameter
 open(10,file=inpar)
 read(10,'(a180)')sta_list
