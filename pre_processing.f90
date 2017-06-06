@@ -139,8 +139,8 @@ do iy=year_b,year_e                   ! loop over year
                call write_sac(trim(sacf(ic))//".re",sigo(:,ic),sachead(ic),nerr)
                sigo(1:nn,ic)=sngl(dimag(seisout(1:nn,ic)))
                call write_sac(trim(sacf(ic))//'.im',sigo(:,ic),sachead(ic),nerr)
-               sigo(1:nn,ic)=sngl(dsqrt(dimag(seisout(1:nn,ic))**2+dreal(seisout(1:nn,ic))**2))
-               call write_sac(trim(sacf(ic))//'.amp',sigo(:,ic),sachead(ic),nerr)
+               !sigo(1:nn,ic)=sngl(dsqrt(dimag(seisout(1:nn,ic))**2+dreal(seisout(1:nn,ic))**2))
+               !call write_sac(trim(sacf(ic))//'.amp',sigo(:,ic),sachead(ic),nerr)
             enddo
             !write(*,*)'Write done!'
          enddo      ! end loop over segments
